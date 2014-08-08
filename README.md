@@ -21,11 +21,12 @@ the file system.
 
 [Vagrant](http://www.vagrantup.com/) is an open source software to share
 virtual machine environments. It provides *boxes* (available at
-[VagrantCloud](https://vagrantcloud.com/) that can be shared by anyone who
-wants to launched the same virtual environment.
+[VagrantCloud](https://vagrantcloud.com/)) that can be shared by anyone who
+wants to launch the same virtual environment.
 
-The *Vagrantfile* here deploy 4 VMs based on an
-[Ubuntu](http://www.ubuntu.com/) 14.04 box that contains the software RozoFS.
+The *Vagrantfile* here describes how the 4 VMs - based on an
+[Ubuntu](http://www.ubuntu.com/) 14.04 box that contains the software
+RozoFS - are deployed.
 Two types of nodes are deployed: one MetaData Server (MDS) that runs exportd,
 storaged and rozofsmount(optional), and three Mojette Projection Storage
 Servers (MPSS) which run storaged and rozofsmount (optional).
@@ -35,7 +36,7 @@ Here is the architecture of the virtual environment:
 ```
 +-------------------------------------------------------------------------------+
 | +---------------+   +---------------+   +---------------+   +---------------+ |
-| |      MDS      |   |      MPSS     |   |      MPSS     |   |      MPSS     | |
+| |      MDS      |   |     MPSS1     |   |     MPSS2     |   |     MPSS3     | |
 | |               |   |               |   |               |   |               | |
 | |  exportd      |   |               |   |               |   |               | |
 | |  storaged     |   |  storaged     |   |  storaged     |   |  storaged     | |
