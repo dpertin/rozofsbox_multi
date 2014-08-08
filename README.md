@@ -1,9 +1,12 @@
-## Getting started with RozoFS using Vagrant
+# Getting started with RozoFS using Vagrant
 
 This a Vagrant file to set four virtual machines on which is set
 [RozoFS](http://www.rozofs.org).
 
-### RozoFS
+
+## Presentation
+
+### RozoFS - distributed file system
 
 [RozoFS](http://www.rozofs.org) is an I/O centric distributed file system
 that deals with data reliability. It is meant to protect data and services
@@ -17,18 +20,26 @@ based on three components:
 * *rozofsmount*: this program relies on [FUSE](fuse.sourceforge.net/) to mount
 the file system.
 
-### Vagrant
+### Vagrant - deploy virtual environments
 
-[Vagrant](http://www.vagrantup.com/) is an open source software to share
-virtual machine environments. It provides *boxes* (available at
-[VagrantCloud](https://vagrantcloud.com/)) that can be shared by anyone who
-wants to launch the same virtual environment.
+[Vagrant](http://www.vagrantup.com/) is an open source software to "create and
+configure lightweight, reproducible and portable development environments".
+It relies on *boxes* (available at [VagrantCloud](https://vagrantcloud.com/))
+that can be shared and used by anyone who wants to launch the same virtual
+environment, based on industry-standard technology.
+Essentially, given a small document in Ruby called a *Vagrantfile* that
+describes the configuration of a set of VMs, Vagrant will download, configure
+and run these VMs in VirtualBox or other software.
 
-The *Vagrantfile* here describes how the 4 VMs - based on an
+## What does it do ?
+
+### Deploy RozoFS over 4 VMs
+
+The Vagrantfile here describes how the 4 VMs - based on an
 [Ubuntu](http://www.ubuntu.com/) 14.04 box that contains the software
 RozoFS - are deployed.
 Two types of nodes are deployed: one MetaData Server (MDS) that runs exportd,
-storaged and rozofsmount(optional), and three Mojette Projection Storage
+storaged and rozofsmount (optional), and three Mojette Projection Storage
 Servers (MPSS) which run storaged and rozofsmount (optional).
 
 Here is the architecture of the virtual environment:
@@ -46,22 +57,32 @@ Here is the architecture of the virtual environment:
 +-------------------------------------------------------------------------------+
 ```
 
-### Using
+## Setup
+
+### Requirements 
 
 The followings are needed:
 * [Vagrant](http://www.vagrantup.com/)
 * [VirtualBox](https://www.virtualbox.org/)
 
+### Using
+
 The deployment has been tested with Vagrant 1.6.3, VirtualBox 4.3.14, on
-Ubuntu 13.10 (Linux 3.11):
+Ubuntu 13.10 (Linux 3.11). It is very simple:
 
 ```shell
 $ git clone http://github.com/denaitre/rozofsbox_multi
 $ cd rozofsbox_multi
 $ vagrant up
-$ ???           # this part might take a long time...
-$ profit !
+$ # ???            this part might take a long time...
+$ # profit !
 ```
+Tadaaaam!
+
+## Play with it
+
+### Check the state of RozoFS
+
 RozoFS is mounted on each VM you can access by ssh. For example:
 
 ```shell
