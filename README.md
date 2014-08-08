@@ -47,11 +47,11 @@ Here is the architecture of the virtual environment:
 
 ### Using
 
-The following are needed:
+The followings are needed:
 * [Vagrant](http://www.vagrantup.com/)
 * [VirtualBox](https://www.virtualbox.org/)
 
-The following has been tested with Vagrant 1.6.3, VirtualBox 4.3.14, on
+The deployment has been tested with Vagrant 1.6.3, VirtualBox 4.3.14, on
 Ubuntu 13.10 (Linux 3.11):
 
 ```shell
