@@ -1,7 +1,7 @@
-# Getting started with RozoFS using Vagrant
+# Getting started with RozoFS and Vagrant
 
-This a Vagrant file to set four virtual machines on which is set
-[RozoFS](http://www.rozofs.org).
+This Vagrant file describes the deployment of four virtual machines on which
+is set a full installation of [RozoFS](http://www.rozofs.org) to play with.
 
 
 ## Presentation
