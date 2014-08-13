@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
   
-  config.vm.box = "denaitre/rozofsbox"
+  config.vm.box = "denaitre/rozofs_ubuntu_trusty"
 
 
   ### Mojette Projection Storage Server VMs 
