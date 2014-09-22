@@ -101,9 +101,11 @@ rozofs         106570960        0 106570960   0% /mnt/rozofs@192.168.100.10/expo
 ```
 
 If RozoFS is installed on your host machine, it is also possible to mount
-the file system on your host machine :)
+the file system on your host machine :) Please check before that the versions
+of RozoFS are the same on your machine and on your VMs.
 
 ```shell
+$ rozo --version
 $ (sudo) mkdir /mnt/rozofs/
 $ (sudo) rozofsmount /mnt/rozofs/ -H 192.168.100.10 -E /srv/rozofs/exports/export_1
 ```
