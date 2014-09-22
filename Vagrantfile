@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
     config.vm.define "mpss#{i}" do |mpss|
         mpss.vm.hostname = "mpss#{i}"
         mpss.vm.network :private_network, ip: "192.168.100.1#{i}"
-        mpss.vm.provision "shell", inline: "rozo agent start"
+        mpss.vm.provision "shell", inline: "rozo agent restart"
     end
   end
 
@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "mds" do |mds|
     mds.vm.hostname = "mds"
     mds.vm.network :private_network, ip: "192.168.100.10"
-    mds.vm.provision "shell", inline: "rozo agent start"
+    mds.vm.provision "shell", inline: "rozo agent restart"
     mds.vm.provision "shell", inline: "rozo volume expand 192.168.100.10 192.168.100.11 192.168.100.12 192.168.100.13 -E 192.168.100.10"
     mds.vm.provision "shell", inline: "sleep 10"
     mds.vm.provision "shell", inline: "rozo node start -r exportd -n 192.168.100.10 -E 192.168.100.10"
